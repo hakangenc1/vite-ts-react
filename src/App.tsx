@@ -1,20 +1,11 @@
-import { HashRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
+import Button from './components/Button';
+import Input from './components/Input';
 
-export function App() {
+export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
-}
-
-export function WrappedApp() {
-  return (
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <div>
+      <Button />
+      <Input />
+    </div>
   );
 }
