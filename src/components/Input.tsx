@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent } from 'react';
 
-export default function Input() {
-  const [name, setName] = useState('');
+interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  onChange: (value: ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+}
+
+export default function Input({ onChange, value, ...restProps }: IInputProps) {
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Enter your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <p id="name">Name: {name}</p>
-    </div>
+    <input
+      {...restProps}
+      type="text"
+      placeholder="Enter your name"
+      value={value}
+      onChange={(e) => onChange(e)}
+    />
   );
 }
