@@ -9,11 +9,17 @@ export default function App() {
     setName(e.target.value);
   };
   return (
-    <div>
-      <Button />
-      <Input onChange={handleOnChange} value={name} />
-
-      <div>Name: {name}</div>
+    <div className="h-screen w-full flex bg-slate-600 justify-center items-center">
+      <div>
+        <Button />
+        <Input
+          onChange={handleOnChange}
+          value={name}
+          type="text"
+          placeholder="Enter your name"
+        />
+        <div className="py-2 text-white">Name: {name}</div>
+      </div>
     </div>
   );
 }

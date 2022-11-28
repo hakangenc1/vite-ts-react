@@ -20,7 +20,13 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'cypress'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'prettier',
+    'cypress',
+    'tailwindcss',
+  ],
   rules: {
     'react/react-in-jsx-scope': 0,
     'cypress/no-assigning-return-values': 'error',
